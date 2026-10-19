@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b1020" />
+    <title>Data Engineer Job Hunter · Real Verified Opportunities</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="Data Engineer Job Hunter home">
+          <span class="brand-mark"><span></span><span></span><span></span></span>
+          <span>DE <b>Job Hunter</b></span>
+        </a>
+        <div class="topbar-meta">
+          <span class="live-dot"><i></i> <span id="topbar-count">Verified Roles</span></span>
+          <a href="https://github.com/jksurampudi5/data-engineer-job-hunter" target="_blank" rel="noreferrer">GitHub Repo ↗</a>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="quick-header page-width" id="job-board">
+          <div>
+            <p class="section-label">Data Engineering · Lakehouse & Cloud · 3+ YOE</p>
+            <h1>Direct Data Engineer Jobs.</h1>
+            <p>Every listing is verified with direct application links to company career portals: role, company, experience, resume fit, and verified apply action.</p>
+          </div>
+          <span class="checked-note">Refreshed regularly<br /><b>Direct apply links only</b></span>
+        </section>
+
+        <section class="job-board page-width">
+          <div class="filter-bar">
+            <label class="search-box"><span>⌕</span><input id="search-input" type="search" placeholder="Search role, company, or skills (PySpark, SQL, AWS)..." /></label>
+            <div class="filter-group">
+              <label class="filter-label" for="status-filter">Status</label>
+              <select id="status-filter">
+                <option value="all">All</option>
+                <option value="apply">Apply now</option>
+                <option value="monitor">Needs review</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label class="filter-label" for="sector-filter">Sector</label>
+              <select id="sector-filter">
+                <option value="all">All sectors</option>
+                <option value="Technology">Technology</option>
+                <option value="Healthcare & Pharma">Healthcare & Pharma</option>
+                <option value="BFSI">BFSI</option>
+                <option value="Retail & Consumer">Retail & Consumer</option>
+              </select>
+            </div>
+            <button class="clear-filter" id="clear-filters" type="button">Reset</button>
+          </div>
+
+          <div class="list-summary">
+            <span id="result-count">Loading jobs...</span>
+            <span class="sort-note">Best resume fit first <span>↓</span></span>
+          </div>
+
+          <div class="job-table-head" aria-hidden="true">
+            <span>Role / company</span>
+            <span>Location</span>
+            <span>Experience</span>
+            <span>Fit</span>
+            <span>Action</span>
+          </div>
+
+          <div id="role-list" class="job-list"></div>
+          <div id="empty-state" class="empty-state hidden">
+            <span>⌁</span>
+            <h3>No jobs found</h3>
+            <p>Try another search or reset the filters.</p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer page-width">
+        <span>Data Engineer Job Hunter · Live Requisition Tracker</span>
+        <span>Direct apply pages verified via automated pipeline</span>
+      </footer>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

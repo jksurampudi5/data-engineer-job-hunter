@@ -32,6 +32,7 @@ class JobPosting:
     description: str = ""
     salary_range: str = "Not Disclosed"
     posted_date: str = ""
+    application_url: str = ""
     status: ApplicationStatus = ApplicationStatus.DISCOVERED
     created_at: str = ""
 

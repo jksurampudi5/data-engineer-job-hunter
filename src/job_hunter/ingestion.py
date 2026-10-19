@@ -4,6 +4,7 @@ Job ingestion engine for loading, validating, and deduplicating job postings.
 
 import json
 import csv
+import re
 from typing import List, Dict, Any, Union
 from pathlib import Path
 from datetime import datetime
@@ -52,19 +53,33 @@ class JobIngestionEngine:
         valid_postings: List[JobPosting] = []
 
         for idx, item in enumerate(raw_records):
-            job_id = str(item.get("job_id") or f"JOB-AUTO-{idx+1}")
+            job_id = str(item.get("id") or item.get("job_id") or f"JOB-AUTO-{idx+1}").strip()
             title = str(item.get("title", "Untitled Role")).strip()
             company = str(item.get("company", "Confidential")).strip()
             location = str(item.get("location", "Not Specified")).strip()
             source = str(item.get("source", "Standard Intake")).strip()
-            exp_min = int(item.get("experience_min", 0))
-            exp_max = int(item.get("experience_max", 10))
-            skills = item.get("skills", [])
+            
+            # Experience parsing
+            exp_min = 0
+            exp_max = 10
+            if "experience_min" in item:
+                exp_min = int(item.get("experience_min", 0))
+                exp_max = int(item.get("experience_max", 10))
+            elif "experience" in item:
+                exp_str = str(item["experience"])
+                m = re.search(r"(\d+)", exp_str)
+                if m:
+                    exp_min = int(m.group(1))
+                    exp_max = exp_min + 4
+
+            skills = item.get("skills") or item.get("matches") or []
             if isinstance(skills, str):
                 skills = [s.strip() for s in skills.split(",") if s.strip()]
-            description = str(item.get("description", "")).strip()
+            
+            description = str(item.get("summary") or item.get("description") or "").strip()
             salary = str(item.get("salary_range", "Not Disclosed")).strip()
             posted_date = str(item.get("posted_date") or datetime.now().strftime("%Y-%m-%d"))
+            app_url = str(item.get("applicationUrl") or item.get("preferredUrl") or "").strip()
 
             posting = JobPosting(
                 job_id=job_id,
@@ -78,6 +93,7 @@ class JobIngestionEngine:
                 description=description,
                 salary_range=salary,
                 posted_date=posted_date,
+                application_url=app_url,
                 status=ApplicationStatus.DISCOVERED,
                 created_at=datetime.utcnow().isoformat(),
             )

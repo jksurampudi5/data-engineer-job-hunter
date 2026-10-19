@@ -45,3 +45,14 @@ def test_ingestion_file_not_found():
     engine = JobIngestionEngine()
     with pytest.raises(FileNotFoundError):
         engine.load_from_json("non_existent_file.json")
+
+
+def test_ingestion_real_jobs_file():
+    real_jobs_path = Path(__file__).parent.parent / "data" / "jobs.json"
+    assert real_jobs_path.exists()
+    engine = JobIngestionEngine()
+    jobs = engine.load_from_json(real_jobs_path)
+    assert len(jobs) >= 20
+    assert any("Amazon" in j.company for j in jobs)
+    assert all(bool(j.application_url) for j in jobs)
+
