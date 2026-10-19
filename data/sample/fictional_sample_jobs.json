@@ -1,0 +1,67 @@
+[
+  {
+    "job_id": "DE-SAMPLE-101",
+    "title": "Senior Data Engineer (PySpark & Databricks)",
+    "company": "NexData Systems",
+    "location": "Remote / Hyderabad",
+    "source": "Sample Job Board",
+    "experience_min": 3,
+    "experience_max": 6,
+    "skills": ["Python", "PySpark", "Databricks", "Apache Spark", "SQL", "Delta Lake", "Airflow"],
+    "description": "Looking for an experienced Data Engineer to design high-throughput lakehouse pipelines using PySpark and Databricks on cloud infrastructure.",
+    "salary_range": "$110,000 - $135,000",
+    "posted_date": "2026-10-15"
+  },
+  {
+    "job_id": "DE-SAMPLE-102",
+    "title": "Data Pipeline Engineer - Airflow & GCP",
+    "company": "StreamVibe Analytics",
+    "location": "Bangalore / Hybrid",
+    "source": "Sample Job Board",
+    "experience_min": 2,
+    "experience_max": 5,
+    "skills": ["Python", "SQL", "Google Cloud Platform", "BigQuery", "Apache Airflow", "dbt", "Docker"],
+    "description": "Develop and maintain automated data extraction and transformation DAGs using Apache Airflow and BigQuery.",
+    "salary_range": "$95,000 - $120,000",
+    "posted_date": "2026-10-16"
+  },
+  {
+    "job_id": "DE-SAMPLE-103",
+    "title": "Lead Lakehouse Engineer",
+    "company": "CloudLake Technologies",
+    "location": "Remote",
+    "source": "Sample Job Board",
+    "experience_min": 5,
+    "experience_max": 8,
+    "skills": ["PySpark", "Databricks", "Delta Lake", "Kafka", "AWS", "Terraform", "CI/CD"],
+    "description": "Architect enterprise lakehouses with real-time streaming via Kafka and batch processing with Delta Lake on AWS.",
+    "salary_range": "$140,000 - $170,000",
+    "posted_date": "2026-10-17"
+  },
+  {
+    "job_id": "DE-SAMPLE-104",
+    "title": "Analytics Engineer (dbt & Snowflake)",
+    "company": "PulseMetrics",
+    "location": "Pune / Hybrid",
+    "source": "Sample Job Board",
+    "experience_min": 2,
+    "experience_max": 4,
+    "skills": ["SQL", "dbt", "Snowflake", "Python", "Looker", "Git"],
+    "description": "Build dimensional data models, semantic layers, and automated data quality tests using dbt Core and Snowflake.",
+    "salary_range": "$90,000 - $115,000",
+    "posted_date": "2026-10-18"
+  },
+  {
+    "job_id": "DE-SAMPLE-105",
+    "title": "Real-Time Streaming Data Engineer",
+    "company": "ByteForge Solutions",
+    "location": "Bangalore",
+    "source": "Sample Job Board",
+    "experience_min": 3,
+    "experience_max": 7,
+    "skills": ["Python", "Apache Kafka", "Flink", "PySpark", "Kubernetes", "PostgreSQL"],
+    "description": "Responsible for building event-driven microservices and low-latency streaming ingestion pipelines using Kafka and PySpark.",
+    "salary_range": "$115,000 - $145,000",
+    "posted_date": "2026-10-19"
+  }
+]

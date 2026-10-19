@@ -1,0 +1,2 @@
+# Testing & Quality
+pytest>=8.0.0
